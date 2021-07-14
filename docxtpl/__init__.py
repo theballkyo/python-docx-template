@@ -242,8 +242,7 @@ class DocxTemplate(object):
             xml = xml.replace('\a', '</w:t></w:r></w:p>'
                                     '<w:p>%s<w:r>%s<w:t xml:space="preserve">' % (paragraph_properties, run_properties))
             xml = xml.replace('\n', '</w:t><w:br/><w:t xml:space="preserve">')
-            xml = xml.replace('\f', '</w:t></w:r></w:p>'
-                                    '<w:p><w:r><w:br w:type="page"/></w:r></w:p>'
+            xml = xml.replace('\f', '<w:p><w:r><w:br w:type="page"/></w:r></w:p>'
                                     '<w:p>%s<w:r>%s<w:t xml:space="preserve">' % (paragraph_properties, run_properties))
             return xml
 
